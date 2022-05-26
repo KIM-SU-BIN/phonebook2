@@ -16,7 +16,7 @@
 	
 	//Person 객체 만들기
    	PersonVo personVo = new PersonVo(name, hp, company);
-
+   	System.out.println(personVo);
 	
 	//phoneDao 객체 만들기
     PhoneDao phoneDao = new PhoneDao();
@@ -39,7 +39,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	sendReadirect("./list.jsp")
+	//응답은 리스트로 리다이렉트 시킨다.
+	//list.jsp 로 다시 요청한다.
+	response.sendRedirect("./list.jsp");
 	
 
 </body>
