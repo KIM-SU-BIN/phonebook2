@@ -44,7 +44,9 @@
 	</table>
 	
 	<% } %>
-	<a href="./writeForm.jsp">추가번호 등록</a>
+	<a href="./writeForm.jsp">추가번호 등록</a> <br>
+	<a href="./minusForm.jsp">삭제</a>
+	<a href="./plusForm.jsp">추가</a>
 
 </body>
 </html>

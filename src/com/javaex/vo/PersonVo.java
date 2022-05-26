@@ -20,6 +20,8 @@ package com.javaex.vo;
 	      this.company = company;
 	   }
 
+	   
+	   //메소드
 	   public int getPersonId() {
 	      return personId;
 	   }
@@ -52,6 +54,8 @@ package com.javaex.vo;
 	      this.company = company;
 	   }
 
+	   
+	 //메소드-일반
 	   @Override
 	   public String toString() {
 	      return "PersonVo [personId=" + personId + ", name=" + name + ", hp=" + hp + ", company=" + company + "]";
