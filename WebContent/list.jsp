@@ -30,23 +30,29 @@
 	<% for(int i=0; i<personList.size(); i++){ %>
 	<table border="1">
 		<tr>
-			<td>이름(name)</td>
-			<td><%=personList.get(i).getName()%></td>
+			<td>*이름(name)</td>
+			<td><%=personList.get(i).getName()%>
+			
+			<%--//이름 옆에 아이디 값 주기 --%>
+			( <%=personList.get(i).getPersonId() %> )
+			</td>
 		</tr>
 		<tr>
-			<td>핸드폰(hp)</td>
+			<td>*핸드폰(hp)</td>
 			<td><%=personList.get(i).getHp() %></td>
 		</tr>
 			<tr>
 			<td>*회사(company)</td>
 			<td><%=personList.get(i).getCompany() %></td>
 		</tr>
+		<tr>
+			<td><a href="./update.jsp?id=<%=personList.get(i).getPersonId()%>">[수정폼]</a></td>
+			<td><a href="./delete.jsp?id=<%=personList.get(i).getPersonId()%>>">[삭제]</a></td>
+		</tr>
 	</table>
 	
 	<% } %>
 	<a href="./writeForm.jsp">추가번호 등록</a> <br>
-	<a href="./minusForm.jsp">삭제</a>
-	<a href="./plusForm.jsp">추가</a>
 
 </body>
 </html>

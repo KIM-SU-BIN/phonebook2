@@ -30,7 +30,7 @@
 	
 	List<PersonVo> personList =  phoneDao.getPersonList();
 	System.out.println(personList);
-	%>
+	%>		
 
 <!DOCTYPE html>
 <html>
