@@ -5,22 +5,12 @@
 <%
 	//파라미터 꺼내기
 	int id = Integer.parseInt(request.getParameter("id"));
-	String name = request.getParameter("name");
-	String hp = request.getParameter("hp");
-	String company = request.getParameter("company");
+	System.out.println(id);
 	
-	//PersonVo만들기
-	PersonVo personVo = new PersonVo(id, name, hp, company);
-	System.out.println(personVo);
-	
-	//PersonDao
+	//id의 데이터 가져오기
 	PhoneDao phoneDao = new PhoneDao();
-	int count = phoneDao.personUpdate(personVo);
-	System.out.println(count);
-	
-	
-	//리스트로 리다이렉트
-	response.sendRedirect("./list.jsp");
+	PersonVo personVo = phoneDao.getPerson(id);
+	System.out.println(personVo);
 %>
 
 
@@ -39,12 +29,12 @@
 	   
 	<h3>전화번호</h3>
 	
-	<form action= "./insert.jsp" method="get">
+	<form action= "./update.jsp" method="get">
 		이름(name)	<input type="text" name="" value="<%=personVo.getName()%>"> <br>
 		핸드폰(hp)		<input type="text" name="" value="<%=personVo.getHp()%> "> <br>
 		회사(company)	<input type="text" name="" value="<%=personVo.getCompany()%> "> <br>
 		pk(personId)<input type="text" name="" value="<%=personVo.getPersonId()%> "> <br>
-	<button> 수정 </button>
+	<button type="submit">수정</button>
 
 	</form>
 </body>

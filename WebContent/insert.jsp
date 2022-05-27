@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.javaex.vo.PersonVo"  %>
 <%@ page import="com.javaex.dao.PhoneDao" %>
-<%@ page import="java.util.List" %>
 
 <%	//파라미타에서 값 꺼내오기
 	String name = request.getParameter("name");
@@ -28,21 +27,12 @@
 	///////////////////////////////////////////////////////
 	//리스트 가져와서 html에 넣는다. - 리스트 가져와서 뿌리기
 	
-	List<PersonVo> personList =  phoneDao.getPersonList();
-	System.out.println(personList);
-	%>		
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+	
 	//응답은 리스트로 리다이렉트 시킨다.
 	//list.jsp 로 다시 요청한다.
-	response.sendRedirect("./list.jsp");
+	//response.sendRedirect("./list.jsp");
 	
-
-</body>
-</html>
+	
+	//Lst<PersonVo> personList =  phoneDao.getPersonList();
+	//System.out.println(personList);
+	%>		
