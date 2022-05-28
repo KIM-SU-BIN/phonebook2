@@ -3,7 +3,7 @@
 <%@ page import="com.javaex.vo.PersonVo" %>
 
 <%
-	//파라미터 꺼내기
+//파라미터 꺼내기
 	int id = Integer.parseInt(request.getParameter("id"));
 	System.out.println(id);
 	

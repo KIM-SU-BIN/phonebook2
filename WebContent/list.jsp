@@ -5,7 +5,7 @@
 <%@ page import="com.javaex.vo.PersonVo" %>
 
 <%
-	PhoneDao phoneDao = new PhoneDao();
+PhoneDao phoneDao = new PhoneDao();
 	List<PersonVo> personList =  phoneDao.getPersonList();
 	System.out.println(personList);
 %>

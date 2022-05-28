@@ -3,6 +3,7 @@
 <%@ page import="com.javaex.vo.PersonVo" %>
 
 <%
+
 	//파라미터에서 id값 꺼내오기
 	int id = Integer.parseInt(request.getParameter("id"));
 	String name = request.getParameter("name");
