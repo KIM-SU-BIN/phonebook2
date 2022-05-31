@@ -1,12 +1,16 @@
 package com.javaex.vo;
 
 public class PersonVo {
-
+	
+	//필드
 	private int personId;
 	private String name;
 	private String hp;
 	private String company;
 
+	//생성자
+	public PersonVo() {}
+	
 	public PersonVo(String name, String hp, String company) {
 		this.name = name;
 		this.hp = hp;
@@ -20,6 +24,8 @@ public class PersonVo {
 		this.company = company;
 	}
 
+	
+	//메소드
 	public int getPersonId() {
 		return personId;
 	}
@@ -52,6 +58,8 @@ public class PersonVo {
 		this.company = company;
 	}
 
+	
+	//메소드 일반
 	@Override
 	public String toString() {
 		return "PersonVo [personId=" + personId + ", name=" + name + ", hp=" + hp + ", company=" + company + "]";
