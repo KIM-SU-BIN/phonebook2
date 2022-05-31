@@ -77,7 +77,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate(); // 쿼리문 실행
 
 			// 4.결과처리
-			// System.out.println("[" + count + "건 추가되었습니다.]");
+			System.out.println("[" + count + "건 추가되었습니다.]");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -168,7 +168,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate(); // 쿼리문 실행
 
 			// 4.결과처리
-			// System.out.println(count + "건 수정되었습니다.");
+			System.out.println(count + "건 수정되었습니다.");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -195,7 +195,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate(); // 쿼리문 실행
 
 			// 4.결과처리
-			// System.out.println(count + "건 삭제되었습니다.");
+			System.out.println(count + "건 삭제되었습니다.");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
