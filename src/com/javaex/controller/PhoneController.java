@@ -3,7 +3,6 @@ package com.javaex.controller;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.javaex.dao.PhoneDao;
+import com.javaex.util.WebUtil;
 import com.javaex.vo.PersonVo;
 
 
@@ -44,15 +44,20 @@ public class PhoneController extends HttpServlet {
 			request.setAttribute("pList", phoneList);
 			
 			//데이터 + html --> jsp 시킨다
+			WebUtil.forword(request, response, "/WEB-INF/list.jsp");
+			
+			/*
 			RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
 			rd.forward(request, response);
-			
+			*/
 		}else if("writeForm".equals(action)) { //등록폼일때
 			
 			//포워드
+			WebUtil.forword(request, response, "/WEB-INF/writeForm.jsp");
+			/*
 			RequestDispatcher rd = request.getRequestDispatcher("/writeForm.jsp");
 			rd.forward(request, response);
-			
+			*/
 		}else if("write".equals(action)) { //등록일때
 
 			//파라미터에서 값 꺼내기(name, hp ,company)
@@ -71,8 +76,10 @@ public class PhoneController extends HttpServlet {
 			System.out.println(count);
 			
 			//리다이렉트 list
-			response.sendRedirect("/phonebook2/pbc?action=list");
-			
+			WebUtil.redirect(request, response, "./pbc?action=list");
+			/*
+			response.sendRedirect("./pbc?action=list");
+			*/
 			
 		}else if("delete".equals(action)) { //삭제일때
 			
@@ -84,12 +91,15 @@ public class PhoneController extends HttpServlet {
 			int count = phoneDao.personDelete(id);
 			
 			//리다이렉트 list
+			WebUtil.redirect(request, response, "./pbc?action=list");
+			/*
 			response.sendRedirect("./pbc?action=list");
-			
-			
+			*/
 		}else {
 			System.out.println("action 파라미터 없음");
 		}
+		
+		
 		
 	}
 	
@@ -99,4 +109,5 @@ public class PhoneController extends HttpServlet {
 		
 		doGet(request, response);
 	}
+
 }

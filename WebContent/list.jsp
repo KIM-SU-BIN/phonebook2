@@ -13,9 +13,6 @@
 	List<PersonVo> personList = phoneDao.getPersonList();
 %>
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
