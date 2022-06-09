@@ -92,7 +92,7 @@ public class PhoneDao {
 	}
 
 	// 사람 리스트(검색할때)
-	public List<PersonVo> getPersonList(String keword) {
+	public List<PersonVo> getPersonList(String keyword) {
 		List<PersonVo> personList = new ArrayList<PersonVo>();
 
 		getConnection();
@@ -107,15 +107,15 @@ public class PhoneDao {
 			query += "         company ";
 			query += " from person";
 
-			if (keword != "" || keword == null) {
+			if (keyword != "" || keyword == null) {
 				query += " where name like ? ";
 				query += " or hp like  ? ";
 				query += " or company like ? ";
 				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
 
-				pstmt.setString(1, '%' + keword + '%'); // ?(물음표) 중 1번째, 순서중요
-				pstmt.setString(2, '%' + keword + '%'); // ?(물음표) 중 2번째, 순서중요
-				pstmt.setString(3, '%' + keword + '%'); // ?(물음표) 중 3번째, 순서중요
+				pstmt.setString(1, '%' + keyword + '%'); // ?(물음표) 중 1번째, 순서중요
+				pstmt.setString(2, '%' + keyword + '%'); // ?(물음표) 중 2번째, 순서중요
+				pstmt.setString(3, '%' + keyword + '%'); // ?(물음표) 중 3번째, 순서중요
 			} else {
 				pstmt = conn.prepareStatement(query); // 쿼리로 만들기
 			}
