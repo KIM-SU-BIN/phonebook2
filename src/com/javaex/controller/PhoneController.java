@@ -54,6 +54,9 @@ public class PhoneController extends HttpServlet {
           * rd.forward(request, response);
           */
          
+         
+         
+         
       }else if("writeForm".equals(action)) {//action을 뒤로넣어주면 오류가 안생김 "writeForm".equals(action)
          //포어드
          WebUtil.forword(request, response, "/WEB-INF/writeForm.jsp");
@@ -61,6 +64,9 @@ public class PhoneController extends HttpServlet {
           * RequestDispatcher rd = request.getRequestDispatcher("/writeForm.jsp");
           * rd.forward(request, response);
           */
+         
+         
+         
       }else if("write".equals(action)) {
          
          String name = request.getParameter("name");
@@ -74,6 +80,10 @@ public class PhoneController extends HttpServlet {
          
          response.sendRedirect("./pbc?action=list");
          
+         
+         
+         
+         
       }else if ("updateForm".equals(action)) {
          PhoneDao phoneDao = new PhoneDao();
          int id = Integer.parseInt(request.getParameter("id"));
@@ -82,6 +92,11 @@ public class PhoneController extends HttpServlet {
          request.setAttribute("personVo", personVo);
          
          WebUtil.forword(request, response, "/WEB-INF/updateForm.jsp");
+         
+         
+         
+         
+         
       }else if ("update".equals(action)) {
          int id = Integer.parseInt(request.getParameter("id"));
          String name = request.getParameter("name");
@@ -94,6 +109,10 @@ public class PhoneController extends HttpServlet {
          phoneDao.personUpdate(personVo);
          
          response.sendRedirect("./pbc?action=list");
+         
+         
+         
+         
       }else if("delete".equals(action)) {
          int id = Integer.parseInt(request.getParameter("id"));
          PhoneDao phoneDao = new PhoneDao();
